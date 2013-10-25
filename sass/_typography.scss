@@ -1,0 +1,153 @@
+/**
+ * @file
+ * Define your typography system here.
+ */
+
+/* ===============================================================
+   Modular Scale (Major Third: 18px @ 1:1.25)
+   @see http://modularscale.com/
+   Choose your base font size based on mobile and go from there.
+   =============================================================== */
+// @todo: add a scale variable to automatically generate the text resizing ($scale: 1.25;)
+
+$display-text:         44px; // h1 alternate-a
+$large-heading:        35px; // h1
+$medium-heading:       28px; // h1 alternate-b
+$small-heading:        23px; // h2
+$large-body-text:      18px; // h3
+$body-text: $base-font-size; // h4, p
+$small-body-text:      14px; // h5, h6
+$label-text:           12px; // small
+
+$navigation-text:  16px; // off-scale (true sadness)
+
+/* ==============================================================
+   Global Type Styles
+   Here for designer convenience, overwrites any normalize rules.
+   ============================================================== */
+
+html {
+  // Sets a font stack from _init.scss
+  font-family: $base-font-family;
+  // Controls global font resizing
+  font-size: $base-font-size;
+  @include breakpoint(600px) {
+    font-size: 125%; // derived from modular scale
+  }
+  @include breakpoint(1000px) {
+    font-size: 156%; // derived from modular scale
+  }
+}
+
+// Spec a webfont and set the base type style for the body
+body {
+  //font-family: 'Whitney SSm A', 'Whitney SSm B', $helvetica;
+  @include adjust-font-size-to($body-text, 4);
+  @include groom(4, $body-text, 400, $black);
+}
+
+// Use to spec a 'display font' (if avaiable)
+%display-type {
+  //font-family: 'Whitney A', 'Whitney B', $helvetica;
+}
+
+h1 {
+  @include adjust-font-size-to($large-heading, 9);
+  @include groom(0, $large-heading, 400, $black);
+  @extend %display-type;
+}
+
+h2 {
+  @include adjust-font-size-to($small-heading, 6);
+  @include groom(2, $small-heading, 600, $black);
+}
+
+h3 {
+  @include adjust-font-size-to($large-body-text, 5);
+  @include groom(2, $large-body-text, 600, $black);
+}
+
+h4 {
+  @include adjust-font-size-to($body-text, 4);
+  @include groom(2, $body-text, 600, $black);
+}
+
+h5 {
+  @include adjust-font-size-to($small-body-text, 3.5);
+  @include groom(2, $body-text, 600, $black);
+  text-transform: uppercase;
+}
+
+h6 {
+  @include adjust-font-size-to($small-body-text, 3.5);
+  @include groom(2, $body-text, 400, $black);
+  text-transform: uppercase;
+}
+
+ul, ol {
+  @include adjust-font-size-to($body-text, 5);
+  @include groom(4, $body-text);
+}
+
+li {
+  @include groom(2, $body-text);
+  margin-left: $slug/2;
+  // for nested lists
+  ul li {
+    margin-top: rhythm(1, $body-text) ;
+    margin-bottom: rhythm(1, $body-text) ;
+  }
+}
+
+figcaption {
+  @include adjust-font-size-to($small-body-text, 4);
+  @include groom(4, $small-body-text, 400, $black);
+}
+
+// Use this if your webfont uses numbers to spec bold, so wysiwyg
+// editors work correctly.
+
+/*
+b,
+strong {
+  font-weight: 600;
+}
+*/
+
+// style your horizontal rules
+hr {
+  height: 1px;
+  border: 1px solid #666;
+  padding-bottom: -1px;
+  margin: rhythm(1) 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Define your site's basic link behavior. (i.e. what would happen in a wysiwyg editor)
+ * The order of link states are based on Eric Meyer's article:
+ * http://meyerweb.com/eric/thoughts/2007/06/11/who-ordered-the-link-states
+ */
+
+a:link,
+a:visited {
+  color: #0099FF;
+}
+a:hover,
+a:focus,
+a:active {
+  color: #FF3300;
+}
+
+/* ==============================================================
+   Type Style Alterations
+   ============================================================== */
+/*
+.class-name {
+  @include adjust-font-size-to($fontsize, base-line-units);
+  @include groom(base-line-unit-after, $font-size, font-weight, $color);
+}
+*/

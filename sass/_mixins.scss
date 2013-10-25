@@ -1,0 +1,68 @@
+/**
+ * @file
+ * Define your custom Sass mixins and extends here.
+ * @see http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#defining_a_mixin
+ */
+
+/* ==========================================================================
+   Clearfix extend
+   ========================================================================== */
+
+/**
+ * Applies a clearfix ruleset using a placeholder selector. Placeholder selectors
+   do not get compiled uless they are called - removing the nesting issues that
+   can otherwise occur with extends.
+ */
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/* ==============================================================
+   Transition mixin
+   ============================================================== */
+
+@mixin trans($timing, $easing) {
+  -webkit-transition: all $timing $easing;
+  -moz-transition: all $timing $easing;
+  -o-transition: all $timing $easing;
+  transition: all $timing $easing;
+}
+
+/* ==============================================================
+   Typography mixins
+   ============================================================== */
+
+/* Spec vertical rhythm, weight & color in one line
+/* Usage: @include groom(4, 34px, 400, $neutral-text); */
+@mixin groom($base-line-unit-after, $font-size, $font-weight: auto, $color: auto) {
+  margin: 0 auto rhythm($base-line-unit-after, $font-size);
+  font-weight: $font-weight;
+  color: $color;
+}
+
+/* ==============================================================
+   Positioning mixins
+   ============================================================== */
+
+/*
+// For vertical spacing above and below objects based on your base-line-height
+// Convert the $base-line-height to em
+$base-line-height-em: calc-em($base-line-height, 16px);
+// Set the value of 1 slug unit
+$slug: $base-line-height-em * 8;
+*/
+
+// For consistent vertical spacing above and below objects
+// Set the value of 1 slug unit
+$slug: $base-line-height * 8;
+
+// Usage: @include slug(0, 1);
+@mixin slug($top-slug-count: 0, $bottom-slug-count: 0) {
+  margin-top: ($slug * $top-slug-count);
+  margin-bottom: ($slug * $bottom-slug-count);
+}
