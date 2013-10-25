@@ -1,7 +1,7 @@
 prototype-starter
 =================
 
-This well-commented prototype starter for spinning up new projects quickly.
+This well-commented prototype starter is for spinning up new projects quickly.
 
 It includes the following:
 - A basic index file
