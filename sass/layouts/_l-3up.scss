@@ -1,0 +1,30 @@
+/**
+ * @file
+ * Layout rules for 3-up content
+ */
+
+.l-3up-1 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-grid-item(4,1);
+  }
+}
+
+.l-3up-2 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);
+    @include zen-grid-item(4,5);
+  }
+}
+
+.l-3up-3 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);
+    @include zen-grid-item(4,9);
+  }
+}

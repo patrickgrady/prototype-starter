@@ -1,0 +1,12 @@
+/**
+ * @file
+ * Design Component (SMACSS module) partial
+ */
+
+.site-footer {
+  background: lighten($black, 70%);
+}
+
+.site-footer .label {
+  line-height: 288px;
+}

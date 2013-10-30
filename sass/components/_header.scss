@@ -1,0 +1,12 @@
+/**
+ * @file
+ * Design Component (SMACSS module) partial
+ */
+
+.site-header {
+  background: lighten($black, 70%);
+}
+
+.site-header .label {
+  line-height: 96px;
+}

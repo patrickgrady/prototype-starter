@@ -1,0 +1,19 @@
+/**
+ * @file
+ * Design Component (SMACSS module) partial
+ */
+
+.map {
+  background: lighten($black, 50%);
+}
+
+.map .call-to-action {
+  @include slug(32,4);
+  @include breakpoint($bp1){
+    @include slug(16,16);
+  }
+}
+
+.call-to-action p {
+  margin: 0 0 12px 0;
+}

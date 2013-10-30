@@ -31,24 +31,24 @@ html {
   font-family: $base-font-family;
   // Controls global font resizing
   font-size: $base-font-size;
-  @include breakpoint(600px) {
-    font-size: 125%; // derived from modular scale
+  @include breakpoint($bp1) {
+    font-size: 112.5%; // derived from modular scale
   }
-  @include breakpoint(1000px) {
-    font-size: 156%; // derived from modular scale
+  @include breakpoint($bp2) {
+    font-size: 125%; // derived from modular scale
   }
 }
 
 // Spec a webfont and set the base type style for the body
 body {
   //font-family: 'Whitney SSm A', 'Whitney SSm B', $helvetica;
-  @include adjust-font-size-to($body-text, 4);
-  @include groom(4, $body-text, 400, $black);
+  @include adjust-font-size-to($body-text, 3);
+  @include groom(0, $body-text, 400, $black);
 }
 
 // Use to spec a 'display font' (if avaiable)
 %display-type {
-  //font-family: 'Whitney A', 'Whitney B', $helvetica;
+  font-family: 'Whitney A', 'Whitney B', $helvetica;
 }
 
 h1 {
@@ -79,23 +79,21 @@ h5 {
 }
 
 h6 {
-  @include adjust-font-size-to($small-body-text, 3.5);
-  @include groom(2, $body-text, 400, $black);
+  @include adjust-font-size-to($label-text, 3.5);
+  @include groom(2, $label-text, 400, $black);
   text-transform: uppercase;
 }
 
 ul, ol {
-  @include adjust-font-size-to($body-text, 5);
-  @include groom(4, $body-text);
+  @include slug(2,2);
+  @include adjust-font-size-to($body-text, 3);
 }
 
 li {
-  @include groom(2, $body-text);
-  margin-left: $slug/2;
   // for nested lists
   ul li {
-    margin-top: rhythm(1, $body-text) ;
-    margin-bottom: rhythm(1, $body-text) ;
+    margin-top: rhythm(1, $body-text);
+    margin-bottom: rhythm(1, $body-text);
   }
 }
 
@@ -106,7 +104,6 @@ figcaption {
 
 // Use this if your webfont uses numbers to spec bold, so wysiwyg
 // editors work correctly.
-
 /*
 b,
 strong {
@@ -151,3 +148,12 @@ a:active {
   @include groom(base-line-unit-after, $font-size, font-weight, $color);
 }
 */
+
+.label {
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  color: lighten($black, 40%);
+}

@@ -289,7 +289,7 @@ dl,
 menu,
 ol,
 ul {
-  margin: rhythm(1) 0;
+  margin: rhythm(2) 0;
   padding: 0 0 0 $indent-amount; /* LTR */
 }
 
@@ -338,6 +338,7 @@ img {
   /* Responsive images */
   max-width: 100%;
   height: auto;
+  vertical-align: bottom;
   @if $legacy-support-for-ie8 {
     width: auto; /* Correct IE 8 not scaling image height when resized. */
   }

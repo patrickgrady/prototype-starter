@@ -1,0 +1,25 @@
+/**
+ * @file
+ * Design Component (SMACSS module) partial
+ */
+
+.gallery-list {
+  @extend %clearfix;
+  list-style-type: none;
+}
+
+.gallery-list li {
+  @include slug(2,2);
+  @include breakpoint($bp1){
+    @include slug(4,4);
+  }
+}
+
+.gallery-item {
+  border: 1px solid lighten($black, 66%);
+}
+
+.gallery-item__link {
+  display: inline-block;
+  padding: 1em;
+}

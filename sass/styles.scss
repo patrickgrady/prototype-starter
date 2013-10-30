@@ -18,14 +18,24 @@
 @import "layouts/l-zen-grids-base";
 //@import "layouts/l-header";
 //@import "layouts/l-footer";
-//@import "layouts/l-3up";
+//@import "layouts/l-1up";
+//@import "layouts/l-66-33";
+//@import "layouts/l-33-66";
+//@import "layouts/l-25-75";
+//@import "layouts/l-75-25";
+@import "layouts/l-2up";
+@import "layouts/l-3up";
+//@import "layouts/l-4up";
 //@import "layouts/l-6up";
 
 /* Component (SMACSS module) rules */
 //@import "components/button";
-//@import "components/footer";
-//@import "components/header";
+@import "components/footer";
+@import "components/gallery";
+@import "components/header";
+@import "components/hero";
 @import "components/hidden";
+@import "components/map";
 //@import "components/search";
 
 /* print rules */

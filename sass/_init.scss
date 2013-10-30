@@ -80,20 +80,11 @@ $white: #fbfbfb;
 $black: #333333;
 
 // breakpoint variables
-$sm: 241px 320px;
-$md: 321px 960px;
-$lg: 961px 1279px;
-$xl: 1280px;
+$bp1: 601px;
+$bp2: 1101px;
 
 // The amount lists, blockquotes and comments are indented.
-$indent-amount: 30px;
-
-// The height of the navigation container.
-$nav-height: 3em;
-
-// Tab styling.
-$tabs-container-bg: #fff;
-$tabs-border: #bbb;
+$indent-amount: 0px;
 
 // =============================================================================
 // Partials to be shared with all .scss files.

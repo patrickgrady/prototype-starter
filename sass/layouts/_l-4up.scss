@@ -1,0 +1,39 @@
+/**
+ * @file
+ * Layout rules for 4-up content
+ */
+
+.l-4up-1 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-grid-item(3,1);
+  }
+}
+
+.l-4up-2 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);
+    @include zen-grid-item(3,4);
+  }
+}
+
+.l-4up-3 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);
+    @include zen-grid-item(3,7);
+  }
+}
+
+.l-4up-4 {
+  @include zen-clear();
+  @include zen-grid-item(12,1);
+  @include breakpoint($bp1){
+    @include zen-clear(none);
+    @include zen-grid-item(3,10);
+  }
+}
